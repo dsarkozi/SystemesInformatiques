@@ -44,7 +44,7 @@ Exercices
  
      Oui, c'est possible. Dans ce cas, les offset pointers sont différents pour les deux copies du même fichier. Il est utile de faire un dessin pour que les étudiants visualisent bien la situation
  
-8. Dans un shell, on exécute la commande ``/bin/echo "1234" > /test.txt``. Quels sont les appels systèmes effectués par le shell avant l'exécution de ``/bin/echo`` ?
+8. Dans un shell, on exécute la commande ``/bin/echo "1234" > /test.txt``. Quels sont les appels système effectués par le shell avant l'exécution de ``/bin/echo`` ?
  
    .. only:: staff
  
@@ -70,7 +70,7 @@ Exercices
    close(stdin)
    close(stdout)
 
-11. Dans un shel `bash(1)`_, lorsque l'on suffixe une commande avec ``2>&1``, le shell redirige la sortie d'erreur standard vers la sortie standard. Quels sont les appels systèmes utilisés par le shell pour réussir cette redirection ?
+11. Dans un shel `bash(1)`_, lorsque l'on suffixe une commande avec ``2>&1``, le shell redirige la sortie d'erreur standard vers la sortie standard. Quels sont les appels système utilisés par le shell pour réussir cette redirection ?
  
    .. only :: staff
 
@@ -97,7 +97,7 @@ Exercices
 
 15. Effectuez l'exercice sur la manipulation de fichiers sur `pythia <http://pythia.info.ucl.ac.be/module/10/problem/59>`_.
 
-.. 17. `tee(1)`_ est un utilitaire qui permet de recopier son entrée standard vers un ou plusieurs fichiers et également vers sa sortie standard. Il peut être utile pour par exemple inspecter des données échangées entre deux processus à travers un :term:`pipe`. Quels sont les appels systèmes exécutés par `tee(1)`_ lors de l'exécution de la commande ``cat /tmp/t | tee /tmp/tee.out | grep "sinf1252" ``
+.. 17. `tee(1)`_ est un utilitaire qui permet de recopier son entrée standard vers un ou plusieurs fichiers et également vers sa sortie standard. Il peut être utile pour par exemple inspecter des données échangées entre deux processus à travers un :term:`pipe`. Quels sont les appels système exécutés par `tee(1)`_ lors de l'exécution de la commande ``cat /tmp/t | tee /tmp/tee.out | grep "sinf1252" ``
 
 
 

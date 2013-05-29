@@ -211,7 +211,7 @@ Le dernier point à mentionner concernant cet exemple est relatif à la fonction
 Traitement des erreurs
 ----------------------
 
-Certaines fonctions de la librairie et certains appels systèmes réussissent toujours. C'est le cas par exemple pour `getpid(2)`_. D'autres fonctions peuvent échouer et il est important de tester la valeur de retour de chaque fonction/appel système utilisé pour pouvoir réagir correctement à toute erreur. Pour certaines fonctions ou appels systèmes, il est parfois nécessaire de fournir à l'utilisateur plus d'information sur l'erreur qui s'est produite. La valeur de retour utilisée pour la plupart des fonctions de la libraire et appels système (souvent un ``int`` ou un pointeur), ne permet pas de fournir de l'information précise sur l'erreur qui s'est produite. 
+Certaines fonctions de la librairie et certains appels système réussissent toujours. C'est le cas par exemple pour `getpid(2)`_. D'autres fonctions peuvent échouer et il est important de tester la valeur de retour de chaque fonction/appel système utilisé pour pouvoir réagir correctement à toute erreur. Pour certaines fonctions ou appels système, il est parfois nécessaire de fournir à l'utilisateur plus d'information sur l'erreur qui s'est produite. La valeur de retour utilisée pour la plupart des fonctions de la libraire et appels système (souvent un ``int`` ou un pointeur), ne permet pas de fournir de l'information précise sur l'erreur qui s'est produite. 
 
 Les systèmes Unix utilisent la variable globale :term:`errno` pour résoudre ce problème et permettre à une fonction de la librairie ou un appel système qui a échoué de donner plus de détails sur les raisons de l'échec. Cette variable globale est définie dans `errno.h`_ qui doit être inclus par tout programme voulant tester ces codes d'erreur. Cette variable est de type ``int`` et `errno.h` contient les définitions des constantes correspondants aux cas d'erreurs possibles. Il faut noter que la librairie standard fournit également les fonctions `perror(3)`_  et `strerror(3)`_ qui facilitent l'écriture de messages d'erreur compréhensibles pour l'utilisateur. 
 
@@ -224,7 +224,7 @@ A titre d'exemple, le programme ci-dessous utilise `strerror(3)`_ pour afficher 
 
 .. note:: La valeur de ``errno`` n'indique pas la réussite ou l'échec d'une fonction
 
- Il faut noter que la variable ``errno`` n'est modifiée par les fonctions de la librairie ou les appels systèmes que si l'appel échoue. Si l'appel réussit, la valeur de ``errno`` n'est pas modifiée. Cela implique qu'il ne faut surtout pas tester la valeur de ``errno`` pour déterminer si une fonction de la librairie a échoué ou réussi. Il ne faut surtout par utiliser le pattern suivant :
+ Il faut noter que la variable ``errno`` n'est modifiée par les fonctions de la librairie ou les appels système que si l'appel échoue. Si l'appel réussit, la valeur de ``errno`` n'est pas modifiée. Cela implique qu'il ne faut surtout pas tester la valeur de ``errno`` pour déterminer si une fonction de la librairie a échoué ou réussi. Il ne faut surtout par utiliser le pattern suivant :
  
   .. code-block:: c
 
@@ -233,7 +233,7 @@ A titre d'exemple, le programme ci-dessous utilise `strerror(3)`_ pour afficher 
      fprintf(stderr,"Erreur : errno=%d %s\n",errno,strerror(errno);
    }
 
- Le code ci-dessus est erroné car il ne teste pas la valeur de retour de `setenv(3)`_. Comme les fonctions de la librairie et les appels systèmes ne modifient ``errno`` que lorsqu'une erreur survient, le code ci-dessus pourrait afficher un message d'erreur relatif à un appel système précédent qui n'a absolument rien à voir avec l'appel à la fonction `setenv(3)`_. Le code correct est évidemment de tester la valeur de retour de `setenv(3)`_ :
+ Le code ci-dessus est erroné car il ne teste pas la valeur de retour de `setenv(3)`_. Comme les fonctions de la librairie et les appels système ne modifient ``errno`` que lorsqu'une erreur survient, le code ci-dessus pourrait afficher un message d'erreur relatif à un appel système précédent qui n'a absolument rien à voir avec l'appel à la fonction `setenv(3)`_. Le code correct est évidemment de tester la valeur de retour de `setenv(3)`_ :
 
   .. code-block:: c
 

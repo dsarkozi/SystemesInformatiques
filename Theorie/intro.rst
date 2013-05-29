@@ -222,10 +222,10 @@ Une description complète de `bash(1)`_ sort du cadre de ce cours. De nombreuses
 
 .. topic:: Pages de manuel
 
-  Les systèmes d'exploitation de la famille Unix contiennent un grand nombre de librairies, d'appels systèmes et d'utilitaires. Toutes ces fonctions et tous ces programmes sont documentés dans des pages de manuel qui sont accessibles via la commande ``man``. Les pages de manuel sont organisées en 8 sections.
+  Les systèmes d'exploitation de la famille Unix contiennent un grand nombre de librairies, d'appels système et d'utilitaires. Toutes ces fonctions et tous ces programmes sont documentés dans des pages de manuel qui sont accessibles via la commande ``man``. Les pages de manuel sont organisées en 8 sections.
   
    - Section 1: Utilitaires disponibles pour tous les utilisateurs
-   - Section 2: Appels systèmes en C
+   - Section 2: appels système en C
    - Section 3: Fonctions de la librairie
    - Section 4: Fichiers spéciaux
    - Section 5: Formats de fichiers et conventions pour certains types de fichiers
